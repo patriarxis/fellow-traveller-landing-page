@@ -1,16 +1,163 @@
 * {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
   
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
   
 button {
-    background-color: white;
-    border: none;
-    cursor: pointer;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+a {
+  color: #262322;
+  text-decoration: none;
+}
+
+html {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 20px;
+  color: #262322;
+}
+
+body {
+  display: grid;
+}
+
+#web-header-container {
+  width: 100%;
+  height: 90px;
+  padding: 0 20px;
+}
+
+#web-header {
+  margin: auto;
+  display: grid;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+}
+
+#logo {
+  grid-column: 1;
+  place-self: center start;
+  height: 50px;
+  width: 100px;
+}
+
+#logo img {
+  width: 100%;
+  height: 100%;
+}
+
+#web-header-btn {
+  grid-column: 2;
+  place-self: center end;
+  width: auto;
+  height: 45px;
+  font-size: 0.8rem;
+  background-color: transparent;
+  color: #E2631A;
+}
+
+.btn {
+  background-color: #E2631A;
+  border-radius: 7px;
+  color: white;
+  font-weight: 500;
+}
+
+header {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: auto;
+  padding: 30px 20px;
+}
+
+header > * {
+  max-width: 500px;
+}
+
+header div {
+  display: grid;
+  place-items: center;
+}
+
+#title {
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #262322;
+  margin-bottom: 30px;
+}
+
+.par {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 25px;
+  word-spacing: 1px;
+}
+
+#header-btn {
+  width: 100%;
+  height: 60px;
+  font-size: 0.95rem;
+  margin-top: 50px;
+}
+
+#header-img {
+  height: 300px;
+  width: 100%;
+  margin: 50px 0;
+}
+
+section {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile landscape and Tablet portrait */
+@media (min-width: 640px) {
+  #header-btn {
+    width: 200px;
+  }
+}
+
+/* Tablet landscape */
+@media (min-width: 900px) {
+  #web-header-container {
+    height: 80px;
+    padding: 0 30px;
+  }
+  header {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    padding: 80px 30px;
+  }
+  
+  header div {
+    grid-column: 1 / 1 / 1 / 1;
+    justify-self: end;
+  }
+
+  #title {
+    font-size: 2.8rem;
+  }
+
+  #header-btn {
+    justify-self: start;
+  }
+
+  #header-img {
+    grid-area: 1 / 2 / 1 / 2;
+    justify-self: start;
+    margin: 0;
+  }
 }
