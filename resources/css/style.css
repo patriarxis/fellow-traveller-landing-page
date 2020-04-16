@@ -21,6 +21,10 @@ a {
   text-decoration: none;
 }
 
+strong {
+  font-weight: inherit;
+}
+
 html {
   font-family: 'Fira Sans', sans-serif;
   font-size: 20px;
@@ -29,19 +33,18 @@ html {
 
 body {
   display: grid;
+  grid-row-gap: 50px;
 }
 
 #web-header-container {
   width: 100%;
   height: 90px;
-  padding: 0 20px;
 }
 
 #web-header {
   margin: auto;
   display: grid;
   width: 100%;
-  max-width: 1200px;
   height: 100%;
 }
 
@@ -57,6 +60,13 @@ body {
   height: 100%;
 }
 
+.btn {
+  background-color: #E2631A;
+  border-radius: 7px;
+  color: white;
+  font-weight: 500;
+}
+
 #web-header-btn {
   grid-column: 2;
   place-self: center end;
@@ -67,19 +77,17 @@ body {
   color: #E2631A;
 }
 
-.btn {
-  background-color: #E2631A;
-  border-radius: 7px;
-  color: white;
-  font-weight: 500;
+.align {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 header {
   display: grid;
   place-items: center;
+  grid-row-gap: 50px;
   width: 100%;
   height: auto;
-  padding: 30px 20px;
 }
 
 header > * {
@@ -88,17 +96,25 @@ header > * {
 
 header div {
   display: grid;
+  grid-row-gap: 30px;
   place-items: center;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #262322;
 }
 
 #title {
   font-size: 2.2rem;
-  font-weight: 400;
-  color: #262322;
-  margin-bottom: 30px;
 }
 
-.par {
+.heading, .para {
+  max-width: 500px;
+}
+
+.para {
   font-family: 'Roboto', sans-serif;
   font-size: 0.85rem;
   font-weight: 300;
@@ -110,17 +126,29 @@ header div {
   width: 100%;
   height: 60px;
   font-size: 0.95rem;
-  margin-top: 50px;
 }
 
 #header-img {
   height: 300px;
   width: 100%;
-  margin: 50px 0;
 }
 
-section {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+.hr {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#section-1 {
+  display: grid;
+  grid-row-gap: 30px;
+  place-items: center;
+  text-align: center;
+}
+
+#section-1 img {
+  width: 100%;
+  height: 300px;
 }
 
 /* Mobile landscape and Tablet portrait */
@@ -132,19 +160,30 @@ section {
 
 /* Tablet landscape */
 @media (min-width: 900px) {
+  body {
+    grid-row-gap: 70px;
+  }
+
   #web-header-container {
     height: 80px;
-    padding: 0 30px;
   }
+
+  #web-header {
+    max-width: 1030px;
+  }
+
   header {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 30px;
-    padding: 80px 30px;
   }
   
   header div {
     grid-column: 1 / 1 / 1 / 1;
     justify-self: end;
+  }
+
+  .heading {
+    font-size: 2.4rem;
   }
 
   #title {
@@ -159,5 +198,24 @@ section {
     grid-area: 1 / 2 / 1 / 2;
     justify-self: start;
     margin: 0;
+  }
+}
+
+/* Laptop and Desktop */
+@media (min-width: 1240px) {
+  body {
+    grid-row-gap: 120px;
+  }
+
+  .align {
+    padding: 0;
+  }
+
+  #web-header {
+    max-width: 1060px;
+  }
+
+  header {
+    grid-column-gap: 60px;
   }
 }
