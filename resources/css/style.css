@@ -33,9 +33,11 @@ html {
 
 body {
   display: grid;
-  grid-row-gap: 50px;
+  row-gap: 50px;
 }
 
+
+/* WEB HEADER */
 #web-header-container {
   width: 100%;
   height: 90px;
@@ -82,10 +84,12 @@ body {
   padding-right: 20px;
 }
 
+
+/* HEADER */
 header {
   display: grid;
   place-items: center;
-  grid-row-gap: 50px;
+  row-gap: 50px;
   width: 100%;
   height: auto;
 }
@@ -96,7 +100,7 @@ header > * {
 
 header div {
   display: grid;
-  grid-row-gap: 30px;
+  row-gap: 30px;
   place-items: center;
 }
 
@@ -139,9 +143,11 @@ header div {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+
+/* SECTION 1 */
 #section-1 {
   display: grid;
-  grid-row-gap: 30px;
+  row-gap: 30px;
   place-items: center;
   text-align: center;
 }
@@ -149,6 +155,38 @@ header div {
 #section-1 img {
   width: 100%;
   height: 300px;
+}
+
+
+/* SECTION 2 */
+#section-2 {
+  justify-items: center;
+  display: grid;
+  row-gap: 60px;
+}
+
+#h {
+  place-self: center;
+}
+
+#h h2 {
+  margin-bottom: 30px;
+}
+
+#steps {
+  display: grid;
+  row-gap: 30px;
+  max-width: 500px;
+}
+
+#steps div {
+  display: grid;
+  row-gap: 20px;
+}
+
+#steps div img {
+  width: 100%;
+  height: 200px;
 }
 
 /* Mobile landscape and Tablet portrait */
@@ -161,20 +199,20 @@ header div {
 /* Tablet landscape */
 @media (min-width: 900px) {
   body {
-    grid-row-gap: 70px;
+    row-gap: 70px;
   }
 
   #web-header-container {
     height: 80px;
   }
 
-  #web-header {
+  #web-header, #h {
     max-width: 1030px;
   }
 
   header {
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 30px;
+    column-gap: 30px;
   }
   
   header div {
@@ -199,23 +237,42 @@ header div {
     justify-self: start;
     margin: 0;
   }
+
+  #h {
+    width: 100%;
+  }
+
+  #steps {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    max-width: none;
+    width: 100%;
+  }
+
+  #steps div {
+    max-width: none;
+  }
 }
 
 /* Laptop and Desktop */
 @media (min-width: 1240px) {
   body {
-    grid-row-gap: 120px;
+    row-gap: 120px;
   }
 
   .align {
     padding: 0;
   }
 
-  #web-header {
-    max-width: 1060px;
+  #web-header, #h {
+    max-width: 1200px;
   }
 
   header {
-    grid-column-gap: 60px;
+    column-gap: 200px;
+  }
+
+  #steps {
+    padding: 0 30px;
   }
 }
