@@ -62,6 +62,16 @@ body {
   height: 100%;
 }
 
+nav {
+  grid-column: 2;
+  place-self: center;
+}
+
+nav a {
+  padding: 10px;
+  margin: 0 5px;
+}
+
 .btn {
   background-color: #E2631A;
   border-radius: 7px;
@@ -70,12 +80,13 @@ body {
 }
 
 #web-header-btn {
-  grid-column: 2;
+  grid-column: 3;
   place-self: center end;
-  width: auto;
+  width: 100px;
   height: 45px;
   font-size: 0.8rem;
   background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   color: #E2631A;
 }
 
@@ -206,7 +217,7 @@ header div {
     height: 80px;
   }
 
-  #web-header, #h {
+  #web-header, #h, #footer-container {
     max-width: 1030px;
   }
 
@@ -261,7 +272,8 @@ header div {
   }
 
   .align {
-    padding: 0;
+    padding-right: 0;
+    padding-left: 0;
   }
 
   #web-header, #h {
