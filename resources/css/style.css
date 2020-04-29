@@ -8,17 +8,11 @@
 ul {
   list-style-type: none;
 }
-  
-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-}
 
 a {
   color: #262322;
   text-decoration: none;
+  cursor: pointer;
 }
 
 strong {
@@ -43,8 +37,13 @@ body {
 
 /* WEB HEADER */
 #web-header-container {
+  background-color: white;
   width: 100%;
   height: 90px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #web-header {
@@ -73,13 +72,22 @@ nav {
 nav a {
   padding: 10px;
   margin: 0 5px;
+  font-size: .9rem;
+  font-weight: 400;
 }
 
 .btn {
+  display: grid;
+  place-items: center;
   background-color: #E2631A;
   border-radius: 7px;
   color: white;
   font-weight: 500;
+  transition: .1s ease;
+}
+
+.btn:active {
+  background-color: rgb(202, 84, 16);
 }
 
 #web-header-btn {
@@ -91,6 +99,11 @@ nav a {
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: #E2631A;
+}
+
+#web-header-btn:active {
+  background-color: #E2631A;
+  color: white;
 }
 
 
@@ -111,6 +124,8 @@ nav a {
 }
 
 .section-heading {
+  position: relative;
+  z-index: 10;
   display: grid;
   row-gap: 30px;
   max-width: 500px;
@@ -127,7 +142,6 @@ nav a {
 }
 
 .para {
-  font-family: 'Roboto', sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
   line-height: 25px;
@@ -271,7 +285,7 @@ nav a {
 
 #join .btn {
   width: 200px;
-  height: 45px;
+  height: 55px;
 }
 
 #social img {
@@ -304,6 +318,18 @@ nav a {
   .align {
     width: 90%;
     margin: auto;
+  }
+
+  .btn:hover, .btn:focus {
+    background-color: rgb(238, 125, 59);
+  }
+
+  .btn:active {
+    background-color: rgb(202, 84, 16);
+  }
+
+  #web-header-btn:hover, #web-header-btn:focus {
+    border: 2px solid #E2631A;
   }
 
   #header {
@@ -341,7 +367,7 @@ nav a {
   #header-img {
     display: block;
     grid-area: 1 / 1 / 3 / 3;
-    margin-top: 100px;
+    margin-top: 150px;
     max-width: 1100px;
   }
 
@@ -410,7 +436,7 @@ nav a {
   }
 
   #header-img {
-    margin-top: 0;
+    margin-top: 50px;
   }
 
   #steps {
@@ -430,5 +456,9 @@ nav a {
 @media (min-width: 1440px) {
   .align {
     width: 70%;
+  }
+
+  #header-img {
+    margin-top: 30px;
   }
 }
