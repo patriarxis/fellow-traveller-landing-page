@@ -128,10 +128,13 @@ nav a {
 
 .para {
   font-family: 'Roboto', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 300;
   line-height: 25px;
   word-spacing: 1px;
+  padding: 30px;
+  border-top: .5px solid rgba(0, 0, 0, 0.1);
+  border-bottom: .5px solid rgba(0, 0, 0, 0.1);
 }
 
 #header-btn {
@@ -198,6 +201,11 @@ nav a {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 7px;
   padding: 20px;
+}
+
+#steps .para {
+  border: none;
+  padding: 0;
 }
 
 #steps div img {
@@ -316,6 +324,10 @@ nav a {
 
   #title {
     font-size: 2.8rem;
+  }
+
+  .para {
+    font-size: 0.85rem;
   }
 
   #header-btn {
