@@ -56,18 +56,20 @@
 
   <script>
     $(document).ready(function(){
-      $("form").submit(function(){
+      $("form").submit(function(event){
         event.preventDefault();
-
-        var email = '"email":"'.concat($('input[type=email]').val()).concat('"');
-        alert(email);
+        var code;
 
         $.ajax({
-          type: "post",
-          url: "#",
-          data: email
+          type: "POST",
+          url: '#',
+          crossDomain: true,
+          dataType: "json",
+          data: JSON.stringify({
+            email: $('input[type=email]').val()
+          })
         }).done(function(response) {
-          var code = response;
+          code = response;
         });
         
         $('form').fadeOut(200);
