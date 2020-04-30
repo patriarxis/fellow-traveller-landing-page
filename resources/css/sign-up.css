@@ -28,7 +28,8 @@ section {
   height: auto;
 }
 
-div {
+#heading {
+  display: block;
   text-align: center;
 }
 
@@ -91,12 +92,33 @@ input[type=email]:valid + span {
   display: block;
 }
 
+div {
+  display: none;
+}
+
+span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
 svg {
-  position: absolute;
-  width: 0;
-  height: 0;
-  stroke-dasharray: 50;
-  stroke-dashoffset: -50;
+  display: block;
+  margin: auto;
+  width: 70px;
+  height: 70px;
+}
+
+svg > * {
+  fill: none;
+  stroke-miterlimit: 10;
+}
+
+circle {
+  stroke: rgba(0, 0, 0, 0.1);
+  stroke-dasharray: 100;
+  stroke-dashoffset: -100;
   -webkit-transition: stroke-dashoffset .3s .3s ease-out;
   -moz-transition: stroke-dashoffset .3s .3s ease-out;
   -ms-transition: stroke-dashoffset .3s .3s ease-out;
@@ -104,18 +126,36 @@ svg {
   transition: stroke-dashoffset .3s .3s ease-out;
 }
 
+polygon {
+  stroke: #E2631A;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  -webkit-transition: stroke-dashoffset .3s .3s ease-out;
+  -moz-transition: stroke-dashoffset .3s .3s ease-out;
+  -ms-transition: stroke-dashoffset .3s .3s ease-out;
+  -o-transition: stroke-dashoffset .3s .3s ease-out;
+  transition: stroke-dashoffset .3s .3s ease-out;
+}
+
+polyline, path, line {
+  stroke: #E2631A;
+  stroke-dasharray: 50;
+  stroke-dashoffset: -50;
+  -webkit-transition: stroke-dashoffset .6s .6s ease-out;
+  -moz-transition: stroke-dashoffset .6s .6s ease-out;
+  -ms-transition: stroke-dashoffset .6s .6s ease-out;
+  -o-transition: stroke-dashoffset .6s .6s ease-out;
+  transition: stroke-dashoffset .6s .6s ease-out;
+}
+
 .anim {
-  position: static;
-  width: 70px;
-  height: 70px;
   opacity: 1;
   stroke-dashoffset: 0;
 }
 
-span {
-  display: none;
-  font-size: 1.2rem;
-  font-weight: 500;
+.try-again:active circle {
+  fill: rgb(194, 83, 20);
+  stroke: rgb(194, 83, 20);
 }
 
 a {
@@ -151,6 +191,31 @@ a:active {
 
   input[type=submit]:active {
     background-color: rgb(202, 84, 16);
+  }
+
+  .try-again {
+    cursor: pointer;
+  }
+  
+  .try-again > * {
+    transition: .2s ease;
+  }
+  
+  .try-again:hover circle, .try-again:focus circle {
+    fill: #E2631A;
+    stroke: #E2631A;
+  }
+
+  .try-again:active circle {
+    fill: rgb(194, 83, 20);
+    stroke: rgb(194, 83, 20);
+  }
+  
+  .try-again:hover path,
+  .try-again:hover polyline,
+  .try-again:focus path,
+  .try-again:focus polyline {
+    stroke: #fff;
   }
 
   a:hover, a:focus {
