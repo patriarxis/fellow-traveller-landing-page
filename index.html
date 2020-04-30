@@ -6,6 +6,7 @@
   <title>Fellow Traveller</title>
   <link rel="stylesheet" href="resources/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600&display=swap" rel="stylesheet"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -15,15 +16,17 @@
         <img src="" alt="">
       </a>
       <nav>
-        <a href="#section-1-container">Section 1</a>
-        <a href="#section-2-container">Section 2</a>
+        <a scroll="header-container">Header</a>
+        <a scroll="section-1-container">Section 1</a>
+        <a scroll="section-2-container">Section 2</a>
+        <a scroll="section-3-container">Section 3</a>
       </nav>
       <a href="sign-up.html" id="web-header-btn" class="btn">Button</a>
     </div>
   </div>
   
   <header id="header-container">
-    <div id="header" class="align">
+    <div id="header" class="align animation-element" animation="fadeInUp">
       <div class="section-heading">
         <h1 id="title" class="heading"><strong>Lorem ipsum dolor sit amet</strong></h1>
         <p class="para">
@@ -43,7 +46,7 @@
 
   <section id="section-1-container">
     <div id="section-1" class="align">
-      <div class="section-heading">
+      <div class="section-heading animation-element" animation="fadeIn">
         <h2 class="heading">Lorem ipsum dolor</h2>
         <p class="para">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -52,7 +55,7 @@
           convallis vel non ipsum.
         </p>
       </div>
-      <img src="resources/images/section1.svg" alt="">
+      <img class="animation-element" animation="fadeIn" src="resources/images/section1.svg" alt="">
     </div>
   </section>
 
@@ -60,7 +63,7 @@
 
   <section id="section-2-container">
     <div id="section-2" class="align">
-      <div class="section-heading">
+      <div class="section-heading animation-element" animation="fadeIn">
         <h2 class="heading">Lorem ipsum dolor</h2>
         <p class="para">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -70,7 +73,7 @@
         </p>
       </div>
       <div id="steps">
-        <div>
+        <div class="animation-element" animation="fadeInLeft">
           <h3>Lorem ipsum</h3>
           <p class="para">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -78,7 +81,7 @@
           </p>
           <img src="resources/images/section2-1.svg" alt="">
         </div>
-        <div>
+        <div class="animation-element" animation="fadeInLeft">
           <h3>Lorem ipsum</h3>
           <p class="para">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -86,7 +89,7 @@
           </p>
           <img src="resources/images/section2-2.svg" alt="">
         </div>
-        <div>
+        <div class="animation-element" animation="fadeInLeft">
           <h3>Lorem ipsum</h3>
           <p class="para">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -102,7 +105,7 @@
 
   <section id="section-3-container">
     <div id="section-3" class="align">
-      <div class="section-heading">
+      <div class="section-heading animation-element" animation="fadeInUp">
         <h2 class="heading">Lorem ipsum dolor</h2>
         <p class="para">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -111,7 +114,7 @@
           convallis vel non ipsum.
         </p>
       </div>
-      <img src="resources/images/section3.svg" alt="">
+      <img class="animation-element" animation="fadeIn" src="resources/images/section3.svg" alt="">
     </div>
   </section>
 
@@ -135,6 +138,39 @@
       <span id="copyright">Fellow Traveller 2020</span>
     </div>
   </footer>
+
+  <script>
+    $(document).ready(function (){
+      $("nav a").click(function (){
+        $("HTML, BODY").animate({
+          scrollTop: $('#'.concat($(this).attr("scroll"))).offset().top - 120
+        }, 300);
+      });
+
+      var $animation_elements = $('.animation-element');
+      var $window = $(window);
+
+      $window.on('scroll', check_if_in_view);
+      $window.trigger('scroll');
+
+      function check_if_in_view() {
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = (window_top_position + window_height);
+
+        $.each($animation_elements, function() {
+          var $element = $(this);
+          var element_height = $element.outerHeight();
+          var element_top_position = $element.offset().top;
+          var element_bottom_position = (element_top_position + element_height);
+
+          if (element_top_position + 200 <= window_bottom_position) {
+            $element.addClass($element.attr('animation'));
+          }
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
