@@ -39,7 +39,7 @@ body {
 #web-header-container {
   background-color: white;
   width: 100%;
-  height: 90px;
+  height: 70px;
   position: sticky;
   top: 0;
   z-index: 20;
@@ -251,7 +251,7 @@ nav a {
 #footer-container {
   width: 100%;
   height: auto;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.02);
   padding-top: 100px;
   padding-bottom: 20px;
 }
@@ -263,13 +263,7 @@ nav a {
   height: inherit;
 }
 
-#footer-logo-1 {
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-}
-
-#footer-logo-2 {
+#footer-logo {
   display: inline-block;
   width: 300px;
   height: 80px;
@@ -283,15 +277,53 @@ nav a {
   max-width: 500px;
 }
 
+#join p {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
 #join .btn {
   width: 200px;
   height: 55px;
 }
 
-#social img {
+#social {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  column-gap: 20px;
+}
+
+#social a {
   width: 40px;
   height: 40px;
-  margin-right: 20px;
+}
+
+#social svg {
+  border-radius: 5px;
+  width: inherit;
+  height: inherit;
+}
+
+#social svg > * {
+  transition: .2s ease;
+}
+
+#social svg rect {
+  fill: #262322;
+}
+
+#social svg path {
+  fill: white;
+}
+
+#social svg:active rect {
+  fill: #000;
+}
+
+#copyright {
+  font-size: 0.8rem;
+  font-weight: 300;
 }
 
 /* Mobile landscape and Tablet portrait */
@@ -410,7 +442,7 @@ nav a {
   }
 
   #section-3 img {
-    margin-top: 50px;
+    margin-top: 250px;
     max-width: 1100px;
   }
 
@@ -419,13 +451,10 @@ nav a {
     grid-template-rows: auto auto auto auto;
     row-gap: 80px;
     justify-items: start;
+    max-width: 750px;
   }
 
-  #footer-logo-1 {
-    grid-area: 2 / 1 / 2 / 2;
-  }
-
-  #footer-logo-2 {
+  #footer-logo {
     grid-area: 1 / 1 / 1 / 3;
     place-self: center;
   }
@@ -437,11 +466,21 @@ nav a {
   }
 
   #social {
-    grid-area: 3 / 1 / 3 / 2;
+    grid-area: 2 / 1 / 4 / 2;
+    place-self: center;
+  }
+
+  #social svg:hover rect {
+    fill: #4b4b4b;
+  }
+
+  #social svg:active rect {
+    fill: #000;
   }
 
   #copyright {
-    grid-area: 4 / 1 / 4 / 2;
+    grid-area: 4 / 1 / 4 / 3;
+    place-self: center;
   }
 
   .animation-element {
@@ -574,11 +613,11 @@ nav a {
   }
 
   #steps div:nth-child(1) img {
-    margin-left: -300px;
+    margin-left: -200px;
   }
 
   #steps div:nth-child(3) img {
-    margin-right: -250px;
+    margin-right: -150px;
   }
 }
 
@@ -590,5 +629,17 @@ nav a {
 
   #header-img {
     margin-top: 30px;
+  }
+
+  #steps div:nth-child(1) img {
+    margin-left: -300px;
+  }
+
+  #steps div:nth-child(3) img {
+    margin-right: -250px;
+  }
+
+  #section-3 img {
+    margin-top: 150px;
   }
 }
