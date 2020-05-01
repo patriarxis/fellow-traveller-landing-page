@@ -23,6 +23,10 @@ section {
   place-items: center;
 }
 
+img {
+  width: 100%;
+}
+
 div {
   position: relative;
   z-index: 10;
@@ -91,7 +95,10 @@ a:active {
 
   section {
     grid-template-columns: 1fr 1fr;
-    column-gap: 80px;
+  }
+
+  img {
+    width: 700px;
   }
 
   h1 {
@@ -108,5 +115,9 @@ a:active {
 
   a {
     justify-self: start;
+  }
+
+  a:hover {
+    background-color: rgb(236, 113, 41);
   }
 }
