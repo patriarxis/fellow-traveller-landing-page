@@ -251,7 +251,8 @@ nav a {
 #footer-container {
   width: 100%;
   height: auto;
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: #262322;
+  color: white;
   padding-top: 100px;
   padding-bottom: 20px;
 }
