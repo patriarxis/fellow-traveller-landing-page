@@ -35,7 +35,8 @@ section {
 
 h1 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
 }
 
 strong {
@@ -50,7 +51,7 @@ p {
 
 label {
   font-size: .9rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 input {
@@ -79,7 +80,7 @@ input[type=submit] {
   background-color: #E2631A;
   color: white;
   font-size: .95rem;
-  font-weight: 500;
+  font-weight: 400;
   border-radius: 7px;
   cursor: pointer;
 }
