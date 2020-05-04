@@ -21,7 +21,7 @@ strong {
 
 html {
   font-family: 'Fira Sans', sans-serif;
-  font-size: 20px;
+  font-size: 14px;
   color: #262322;
 }
 
@@ -40,7 +40,7 @@ body {
   background-color: white;
   width: 100%;
   height: 70px;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 20;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -72,7 +72,7 @@ nav {
 nav a {
   padding: 10px;
   margin: 0 5px;
-  font-size: .8rem;
+  font-size: .9rem;
   font-weight: 400;
 }
 
@@ -82,7 +82,7 @@ nav a {
   background-color: #E2631A;
   border-radius: 7px;
   color: white;
-  font-size: 0.9rem;
+  font-size: .9rem;
   font-weight: 400;
   letter-spacing: .5px;
   transition: .1s ease;
@@ -97,10 +97,10 @@ nav a {
   place-self: center end;
   width: 100px;
   height: 45px;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 400;
   background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid #E2631A;
   color: #E2631A;
 }
 
@@ -114,16 +114,13 @@ nav a {
 #header-container {
   width: 100%;
   height: auto;
+  margin-top: 80px;
 }
 
 #header {
   display: grid;
   place-items: center;
   height: inherit;
-}
-
-#header .section-heading {
-  place-items: center;
 }
 
 .section-heading {
@@ -146,8 +143,9 @@ nav a {
 }
 
 .para {
+  color: #aaaaaa;
   font-size: 0.9rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 25px;
   word-spacing: 1px;
   padding: 30px;
@@ -160,12 +158,8 @@ nav a {
   height: 55px;
 }
 
-#header-img-mobile {
-  max-width: 650px;
-}
-
 #header-img {
-  display: none;
+  max-width: 650px;
 }
 
 .hr {
@@ -262,8 +256,7 @@ nav a {
   height: auto;
   background-color: #262322;
   color: white;
-  padding-top: 100px;
-  padding-bottom: 20px;
+  padding: 100px 0;
 }
 
 #footer {
@@ -350,15 +343,7 @@ nav a {
 /* Tablet landscape */
 @media (min-width: 900px) {
   html {
-    font-size: 22px;
-  }
-
-  body {
-    row-gap: 70px;
-  }
-
-  #web-header-container {
-    height: 80px;
+    font-size: 16px;
   }
 
   nav {
@@ -396,14 +381,11 @@ nav a {
 
   #header {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    column-gap: 30px;
-    position: relative;
   }
   
   #header .section-heading {
     grid-area: 1 / 1 / 1 / 1;
-    place-self: start;
+    justify-self: start;
   }
 
   #header-btn {
@@ -416,8 +398,7 @@ nav a {
 
   #header-img {
     display: block;
-    grid-area: 1 / 1 / 3 / 3;
-    margin-top: 150px;
+    grid-column: 2;
     max-width: 1100px;
   }
 
@@ -449,7 +430,7 @@ nav a {
 
   #section-3 img {
     margin-top: 250px;
-    max-width: 1100px;
+    max-width: 1000px;
   }
 
   #footer {
@@ -610,10 +591,6 @@ nav a {
     width: 85%;
   }
 
-  #header-img {
-    margin-top: 50px;
-  }
-
   #steps {
     column-gap: 7%;
   }
@@ -631,10 +608,6 @@ nav a {
 @media (min-width: 1440px) {
   .align {
     width: 70%;
-  }
-
-  #header-img {
-    margin-top: 30px;
   }
 
   #steps div:nth-child(1) img {
