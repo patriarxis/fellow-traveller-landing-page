@@ -275,9 +275,44 @@ nav a {
   font-weight: 700;
 }
 
-#section-3 img {
-  max-width: 600px;
+
+/* SECTION 4 */
+#section-4-container {
+  width: 100%;
+  height: auto;
 }
+
+#section-4 {
+  display: grid;
+  row-gap: 60px;
+  height: inherit;
+  background-color: #E2631A;
+  border-radius: 20px;
+  padding: 60px;
+}
+
+#section-4 .heading {
+  color: white;
+}
+
+#section-4 .para {
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 0;
+}
+
+#android {
+  width: 100%;
+  max-width: 250px;
+  height: 80px;
+}
+
+#android {
+  width: 100%;
+  max-width: 250px;
+  height: 80px;
+}
+
 
 
 /* FOOTER */
@@ -654,7 +689,7 @@ nav a {
 /* Large Screens */
 @media (min-width: 1440px) {
   .align {
-    width: 70%;
+    width: 80%;
   }
 
   #passenger-driver {
