@@ -219,7 +219,11 @@ nav a {
   font-weight: 700;
 }
 
-.steps div img {
+.cls-1{fill:#ffb69f;}
+.cls-2{fill:#262322;}
+.cls-3{fill:#a4beff;}
+
+.steps div svg {
   width: 100%;
   max-width: 100px;
 }
@@ -716,9 +720,5 @@ input[type=submit]:active {
 
   #passenger-driver {
     column-gap: 100px;
-  }
-
-  .steps {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
