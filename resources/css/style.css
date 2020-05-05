@@ -27,7 +27,7 @@ html {
 
 body {
   display: grid;
-  row-gap: 50px;
+  row-gap: 80px;
 }
 
 .align {
@@ -114,7 +114,7 @@ nav a {
 #header-container {
   width: 100%;
   height: auto;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 #header {
@@ -184,6 +184,36 @@ nav a {
 
 #section-1 .section-heading {
   text-align: center;
+}
+
+#passenger-driver {
+  display: grid;
+  row-gap: 30px;
+  text-align: center;
+}
+
+#passenger-driver img {
+  width: 100%;
+}
+
+#passenger, #driver {
+  width: 300px;
+  display: grid;
+  place-items: center;
+  row-gap: 10px;
+}
+
+#passenger-driver button {
+  width: 200px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.vr {
+  display: none;
 }
 
 
@@ -402,8 +432,21 @@ nav a {
     max-width: 1100px;
   }
 
-  #section-1 {
-    row-gap: 200px;
+  #passenger-driver {
+    grid-template-columns: 1fr 1px 1fr;
+    column-gap: 50px;
+  }
+
+  #passenger, #driver {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .vr {
+    display: block;
+    height: 100%;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   #section-2 .section-heading {
@@ -591,6 +634,10 @@ nav a {
     width: 85%;
   }
 
+  #passenger-driver {
+    column-gap: 70px;
+  }
+
   #steps {
     column-gap: 7%;
   }
@@ -608,6 +655,10 @@ nav a {
 @media (min-width: 1440px) {
   .align {
     width: 70%;
+  }
+
+  #passenger-driver {
+    column-gap: 100px;
   }
 
   #steps div:nth-child(1) img {
