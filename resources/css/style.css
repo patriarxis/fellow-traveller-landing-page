@@ -21,7 +21,7 @@ strong {
 
 html {
   font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #262322;
 }
 
@@ -40,10 +40,6 @@ body {
   background-color: white;
   width: 100%;
   height: 70px;
-  position: fixed;
-  top: 0;
-  z-index: 20;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #web-header {
@@ -114,7 +110,6 @@ nav a {
 #header-container {
   width: 100%;
   height: auto;
-  margin-top: 100px;
 }
 
 #header {
@@ -129,7 +124,6 @@ nav a {
 }
 
 .heading {
-  font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: #262322;
@@ -141,9 +135,9 @@ nav a {
 }
 
 .para {
-  color: #aaaaaa;
-  font-size: 0.9rem;
-  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
   line-height: 25px;
   word-spacing: 1px;
 }
@@ -199,15 +193,6 @@ nav a {
   row-gap: 10px;
 }
 
-#passenger-driver button {
-  width: 200px;
-  height: 40px;
-  background-color: transparent;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
 .vr {
   display: none;
 }
@@ -243,7 +228,6 @@ nav a {
 }
 
 .steps h3 {
-  font-family: 'Playfair Display', serif;
   font-size: 1.2rem;
   font-weight: 700;
 }
@@ -276,18 +260,76 @@ nav a {
 
 #section-4 {
   display: grid;
-  row-gap: 60px;
   height: inherit;
-  background-color: #E2631A;
-  border-radius: 20px;
-  padding: 60px;
-}
-
-#section-4 .heading {
-  color: white;
+  place-items: center;
 }
 
 #section-4 .para {
+  margin-bottom: 30px;
+}
+
+#section-4 img {
+  display: none;
+}
+
+form label {
+  font-weight: 700;
+}
+
+form div {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 80% 20%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+
+#email {
+  width: 100%;
+  height: 50px;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+form input[type=submit] {
+  justify-self: end;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  font-size: 1rem;
+  background-color: #E2631A;
+  color: white;
+  transition: .2s ease;
+  cursor: pointer;
+}
+
+input[type=submit]:active {
+  box-shadow: 0 0 0 20px rgb(255, 175, 129);
+}
+
+
+/* SECTION 5 */
+#section-5-container {
+  width: 100%;
+  height: auto;
+  background-color: #E2631A;
+}
+
+#section-5 {
+  display: grid;
+  height: inherit;
+  place-items: center;
+  padding: 60px 0;
+}
+
+#section-5 .heading {
+  color: white;
+}
+
+#section-5 .para {
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -295,6 +337,7 @@ nav a {
   width: 100%;
   max-width: 250px;
   height: 80px;
+  margin-top: 60px;
 }
 
 
@@ -392,7 +435,7 @@ nav a {
 /* Tablet landscape */
 @media (min-width: 900px) {
   html {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   body {
@@ -487,6 +530,38 @@ nav a {
     grid-template-columns: 1fr 1fr 1fr;
     max-width: none;
     width: 100%;
+  }
+
+  #section-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  #section-4 img {
+    display: block;
+    justify-self: end;
+  }
+
+  #section-4 .section-heading {
+    justify-self: start;
+  }
+
+  input[type=submit]:hover {
+    box-shadow: 0 0 0 20px rgb(255, 161, 107);
+  }
+
+  input[type=submit]:active {
+    box-shadow: 0 0 0 10px rgb(255, 207, 179);
+  }
+
+  #section-5-container {
+    background-color: transparent;
+  }
+  
+  #section-5 {
+    padding: 60px;
+    background-color: #E2631A;
+    border-radius: 20px;
+    justify-items: start;
   }
 
   #footer {
