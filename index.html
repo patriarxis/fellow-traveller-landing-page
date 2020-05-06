@@ -27,19 +27,19 @@
         <img src="" alt="">
       </a>
       <nav>
-        <a aria-label="Navigation Header" scroll="header-container">Header</a>
-        <a aria-label="Navigation Section 1" scroll="section-1-container">Section 1</a>
-        <a aria-label="Navigation Section 2" scroll="section-2-container">Section 2</a>
-        <a aria-label="Navigation Section 3" scroll="section-3-container">Section 3</a>
+        <a class="scroll" aria-label="Navigation Header" scroll="header-container">Header</a>
+        <a class="scroll" aria-label="Navigation Section 1" scroll="section-1-container">Section 1</a>
+        <a class="scroll" aria-label="Navigation Section 2" scroll="section-2-container">Section 2</a>
+        <a class="scroll" aria-label="Navigation Section 3" scroll="section-3-container">Section 3</a>
       </nav>
-      <button id="web-header-btn">Sign Up</button>
+      <button id="web-header-btn" class="scroll" scroll="section-4-container">Sign Up</button>
     </div>
   </div>
 
   <header id="header-container">
     <div id="header" class="align">
-      <div class="section-heading animation-element" animation="fadeInUp">
-        <h1 id="title" class="heading"><strong>Lorem ipsum dolor sit amet</strong></h1>
+      <div class="section-heading">
+        <h1 id="title" class="heading"><strong>First carpool app in Greece</strong></h1>
         <p class="para">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Aenean fermentum lobortis nisi vel tristique. Nam non risus enim.
@@ -47,14 +47,14 @@
           convallis vel non ipsum.
         </p>
       </div>
-      <img id="header-img" src="" alt="" class="animation-element" animation="fadeIn">
+      <img id="header-img" src="" alt="">
     </div>
   </header>
 
   <section id="section-1-container">
     <div id="section-1" class="align">
-      <div class="section-heading animation-element" animation="fadeInUp">
-        <h2 class="heading">Lorem ipsum dolor</h2>
+      <div class="section-heading">
+        <h2 class="heading">What can you do on <br/>FT</h2>
         <p class="para">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Aenean fermentum lobortis nisi vel tristique. Nam non risus enim.
@@ -98,7 +98,7 @@
         </p>
       </div>
       <div class="steps">
-        <div>
+        <div class="animation-element" animation="fadeInLeft">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <path class="cls-1" d="M13.42,3.52C8.44,4.21,4,8.73,2.27,13.46s-1.36,10-.17,14.87,3.21,9.52,4.84,14.28,2.87,9.76,2.47,14.78c-.2,2.43-.79,4.83-.91,7.27a10,10,0,0,0,1.88,6.91c1.7,2,4.43,2.86,7.06,3.08a20.28,20.28,0,0,0,17.13-7.34C37.28,64,38.82,59.82,40.89,56A45.15,45.15,0,0,1,57,39.08c5.5-3.34,12.12-5.9,15-11.63,2.39-4.69,1.55-10.61-1.37-15s-7.62-7.33-12.61-9A57.45,57.45,0,0,0,42.53,1.16C33.12.73,22.79,2.64,13.42,3.52"/>
             <path class="cls-2" d="M81.68,73.15,67.94,59.4a27.65,27.65,0,1,0-8.53,8.54L73.15,81.68a4.5,4.5,0,0,0,6.37,0l2.16-2.16a4.5,4.5,0,0,0,0-6.37ZM20.62,44.63a24,24,0,1,1,24,24A24,24,0,0,1,20.62,44.63ZM79.13,77,77,79.12a.74.74,0,0,1-1.25,0L63,66.46,66.46,63,79.13,75.71a.88.88,0,0,1,.25.62A.9.9,0,0,1,79.13,77Z"/>
@@ -110,7 +110,7 @@
             Aenean fermentum lobortis nisi vel tristique.
           </p>
         </div>
-        <div>
+        <div class="animation-element" animation="fadeInLeft">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <path class="cls-1" d="M4.52,73.57c-.79-6.51-3.41-9.85-3.31-15S3.58,48,8.12,45.58c3.69-2,8.25-1.66,12.16-.18s7.32,4,10.72,6.44,6.91,4.85,10.92,6c4.84,1.44,10,1,15,.26s10-1.78,15-1.48,10.25,2.13,13.36,6.11C87.86,66,88.69,70.3,89,74.42c.35,4.32.23,8.79-1.38,12.8s-5,7.54-9.19,8.46c-4.06.87-8.18-.68-12.18-1.76a55.63,55.63,0,0,0-28.95,0c-4.72,1.28-9.28,3.19-14.1,4S13.07,98.14,9.31,95c-2.9-2.4-5.17-6.45-5.17-9.77S5.32,80.08,4.52,73.57Z"/>
             <polygon class="cls-2" points="54.6 56.74 38.64 40.78 41.41 38.01 54.6 51.21 84.35 21.45 87.12 24.22 54.6 56.74"/>
@@ -122,7 +122,7 @@
             Aenean fermentum lobortis nisi vel tristique.
           </p>
         </div>
-        <div>
+        <div class="animation-element" animation="fadeInLeft">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <path class="cls-1" d="M21.79,8.84c-3.92,4.49-5.64,11.76-3.56,17.61C21.52,35.7,32,34.88,47.45,44,69.83,57.16,73,73.82,83.75,72c9.34-1.56,13.48-15.1,13.65-15.71C103,37.17,83,19.18,80.69,17.15,62.87,1.54,32.51-3.46,21.79,8.84Z"/>
             <path class="cls-2" d="M50,80.17a122.82,122.82,0,0,1-27.92-3.28,7.18,7.18,0,0,1-5.52-7V65.19a9.39,9.39,0,0,1,2.64-6.56l3.33-3.45a5.72,5.72,0,0,0,1.41-2.5l7.31-25.79a9.44,9.44,0,0,1,9.14-7.06H59.61a9.44,9.44,0,0,1,9.14,7.06l7.31,25.79a5.72,5.72,0,0,0,1.41,2.5l3.32,3.45a9.4,9.4,0,0,1,2.66,6.56v4.69a7.18,7.18,0,0,1-5.53,7A122.82,122.82,0,0,1,50,80.17ZM40.39,23.6a5.68,5.68,0,0,0-5.49,4.24L27.59,53.63a9.43,9.43,0,0,1-2.35,4.17l-3.32,3.45a5.62,5.62,0,0,0-1.59,3.94v4.69A3.42,3.42,0,0,0,23,73.22,119,119,0,0,0,50,76.4a119,119,0,0,0,27-3.18,3.42,3.42,0,0,0,2.63-3.34V65.19a5.62,5.62,0,0,0-1.59-3.94L74.75,57.8a9.51,9.51,0,0,1-2.34-4.17L65.1,27.84a5.68,5.68,0,0,0-5.49-4.24Z"/>
@@ -137,7 +137,7 @@
             Aenean fermentum lobortis nisi vel tristique.
           </p>
         </div>
-        <div>
+        <div class="animation-element" animation="fadeInLeft">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <path class="cls-1" d="M50.13,97.61c-5.69-.67-15.4-2.85-22-6.6S16.34,80.66,16.85,73.57c.29-4,2.4-7.81,5.24-10.9a50.48,50.48,0,0,1,10-7.9c6.61-4.27,13.51-8.14,20.4-12A64.61,64.61,0,0,1,65,36.87c4.45-1.37,9.41-1.79,13.81-.31,5.48,1.84,9.37,6.31,12.26,10.94,4.25,6.82,7,14.59,6.66,22.43A27.35,27.35,0,0,1,87.19,90.65c-4.8,3.62-10.91,5.57-17.06,6.43A87.62,87.62,0,0,1,50.13,97.61Z"/>
             <polygon class="cls-2" points="39.86 73.06 16.82 50.02 19.63 47.21 39.86 67.45 80.37 26.93 83.18 29.74 39.86 73.06"/>
@@ -166,7 +166,7 @@
         </p>
       </div>
       <div class="steps">
-        <div>
+        <div class="animation-element" animation="fadeInLeft">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <path class="cls-3" d="M55.14,97.88l-13.36-.76c-4-.22-8.49-.73-10.8-4-2.74-3.82-.68-9.42,2.88-12.48s8.2-4.44,12.37-6.58A37.08,37.08,0,0,0,65.91,44c.25-4.11-.2-8.26.44-12.33s2.62-8.23,6.32-10,8.51-.74,11.84,1.83,5.5,6.36,7.24,10.19A73.16,73.16,0,0,1,98.13,68.7c-.62,9.18-3.42,18.9-10.65,24.6C83,96.87,77.13,98.47,71.37,98.82S57.34,98,55.14,97.88Z"/>
             <path class="cls-2" d="M13.89,50.61V71.1A3.15,3.15,0,0,0,17,74.24h7.62a3.15,3.15,0,0,0,3.14-3.14V68.51l17.76,4.43a16.67,16.67,0,0,0,4,.48,16.1,16.1,0,0,0,4.37-.59L75.52,66.3A4.27,4.27,0,0,0,73.88,58L61.07,59.35a3.57,3.57,0,0,0-2.31-3.15L38.94,48.66a5.94,5.94,0,0,0-4.88.34l-6.27,3.37V50.61a3.15,3.15,0,0,0-3.14-3.14H17A3.15,3.15,0,0,0,13.89,50.61Zm13.9,14v-8l8-4.32a2.26,2.26,0,0,1,1.85-.11l19.83,7.54L48,57.86l-.72,3.68,10.12,2,16.94-1.83a.45.45,0,0,1,.56.41.45.45,0,0,1-.37.6L52.87,69.23a12.69,12.69,0,0,1-6.42.07ZM17.64,51.21H24V70.49h-6.4Z"/>
@@ -181,7 +181,7 @@
             Aenean fermentum lobortis nisi vel tristique.
           </p>
         </div>
-        <div>
+        <div class="animation-element" animation="fadeInLeft">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <path class="cls-3" d="M50.13,97.61c-5.69-.67-15.4-2.85-22-6.6S16.34,80.66,16.85,73.57c.29-4,2.4-7.81,5.24-10.9a50.48,50.48,0,0,1,10-7.9c6.61-4.27,13.51-8.14,20.4-12A64.61,64.61,0,0,1,65,36.87c4.45-1.37,9.41-1.79,13.81-.31,5.48,1.84,9.37,6.31,12.26,10.94,4.25,6.82,7,14.59,6.66,22.43A27.35,27.35,0,0,1,87.19,90.65c-4.8,3.62-10.91,5.57-17.06,6.43A87.62,87.62,0,0,1,50.13,97.61Z"/>
             <polygon class="cls-2" points="39.86 73.06 16.82 50.02 19.63 47.21 39.86 67.45 80.37 26.93 83.18 29.74 39.86 73.06"/>
@@ -192,7 +192,7 @@
             Aenean fermentum lobortis nisi vel tristique.
           </p>
         </div>
-        <div>
+        <div class="animation-element" animation="fadeInLeft">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <path class="cls-3" d="M50.13,97.61c-5.69-.67-15.4-2.85-22-6.6S16.34,80.66,16.85,73.57c.29-4,2.4-7.81,5.24-10.9a50.48,50.48,0,0,1,10-7.9c6.61-4.27,13.51-8.14,20.4-12A64.61,64.61,0,0,1,65,36.87c4.45-1.37,9.41-1.79,13.81-.31,5.48,1.84,9.37,6.31,12.26,10.94,4.25,6.82,7,14.59,6.66,22.43A27.35,27.35,0,0,1,87.19,90.65c-4.8,3.62-10.91,5.57-17.06,6.43A87.62,87.62,0,0,1,50.13,97.61Z"/>
             <polygon class="cls-2" points="39.86 73.06 16.82 50.02 19.63 47.21 39.86 67.45 80.37 26.93 83.18 29.74 39.86 73.06"/>
@@ -237,7 +237,7 @@
           Fusce ac aliquet nibh. Pellentesque vitae elit vitae sem efficitur
           convallis vel non ipsum.
         </p>
-        <img id="android" src="" alt="">
+        <img id="android" src="resources/images/play-store.svg" alt="">
       </div>
     </div>
   </section>
@@ -267,7 +267,7 @@
 
   <script>
     $(document).ready(function () {
-      $("nav a").click(function () {
+      $(".scroll").click(function () {
         $("HTML, BODY").animate({
           scrollTop: $('#'.concat($(this).attr("scroll"))).offset().top - 120
         }, 300);
@@ -283,18 +283,37 @@
         var window_height = $window.height();
         var window_top_position = $window.scrollTop();
         var window_bottom_position = (window_top_position + window_height);
+        var i=0;
 
-        $.each($animation_elements, function () {
+        $.each($animation_elements, function() {
           var $element = $(this);
           var element_height = $element.outerHeight();
           var element_top_position = $element.offset().top;
           var element_bottom_position = (element_top_position + element_height);
 
           if (element_top_position + 200 <= window_bottom_position) {
-            $element.addClass($element.attr('animation'));
+            setTimeout(function() {
+              $element.addClass($element.attr('animation'));
+            }, i)
+            i += 150;
           }
         });
       }
+
+      $("form").submit(function(event) {
+        event.preventDefault();
+        $.ajax({
+          type: "POST",
+          url : "" /* "http://167.172.189.78:8000/campaigns/subscribe" */,
+          crossDomain: true,
+          dataType: "json",
+          data : JSON.stringify({
+            email: $("#email").val()
+          })
+        }).done(function(response) {
+          alert(response);
+        });
+      });
     });
   </script>
 

@@ -221,11 +221,11 @@ nav a {
 
 .cls-1{fill:#ffb69f;}
 .cls-2{fill:#262322;}
-.cls-3{fill:#a4beff;}
+.cls-3{fill:#afdfff;}
 
 .steps div svg {
   width: 100%;
-  max-width: 100px;
+  max-width: 80px;
 }
 
 
@@ -255,12 +255,12 @@ nav a {
   place-items: center;
 }
 
-#section-4 .para {
-  margin-bottom: 30px;
-}
-
 #section-4 img {
   display: none;
+}
+
+form {
+  margin-top: 100px;
 }
 
 form label {
@@ -282,6 +282,10 @@ form div {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.2rem;
   font-weight: 300;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
 }
 
 form input[type=submit] {
@@ -306,6 +310,7 @@ input[type=submit]:active {
 #section-5-container {
   width: 100%;
   height: auto;
+  margin-bottom: -100px;
   background-color: #E2631A;
 }
 
@@ -325,9 +330,7 @@ input[type=submit]:active {
 }
 
 #android {
-  width: 100%;
-  max-width: 250px;
-  height: 80px;
+  width: 200px;
   margin-top: 60px;
 }
 
@@ -430,7 +433,7 @@ input[type=submit]:active {
   }
 
   body {
-    row-gap: 200px;
+    row-gap: 250px;
   }
 
   nav {
@@ -542,6 +545,10 @@ input[type=submit]:active {
     justify-self: start;
   }
 
+  form {
+    margin-top: 200px;
+  }
+
   input[type=submit]:hover {
     box-shadow: 0 0 0 20px rgb(255, 161, 107);
   }
@@ -552,6 +559,7 @@ input[type=submit]:active {
 
   #section-5-container {
     background-color: transparent;
+    margin-bottom: -150px;
   }
   
   #section-5 {
@@ -660,6 +668,7 @@ input[type=submit]:active {
   .fadeInLeft {
     -webkit-animation-name: fadeInLeft;
     animation-name: fadeInLeft;
+    animation-duration: 1s;
   }
 
   @-webkit-keyframes fadeInUp {
