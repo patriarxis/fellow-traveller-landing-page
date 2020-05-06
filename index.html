@@ -32,7 +32,7 @@
         <a class="scroll" aria-label="Navigation Section 2" scroll="section-2-container">Section 2</a>
         <a class="scroll" aria-label="Navigation Section 3" scroll="section-3-container">Section 3</a>
       </nav>
-      <button id="web-header-btn" class="scroll" scroll="section-4-container">Sign Up</button>
+      <button id="web-header-btn" class="scroll" scroll="sign-up">Sign Up</button>
     </div>
   </div>
 
@@ -225,8 +225,8 @@
         <form>
           <label for="email">Email</label>
           <div>
-            <input id="email" type="email" name="email" placeholder="example@email.com" maxlength="50" required>
-            <input type="submit" value="&#129122;">
+            <input id="email" type="email" name="email" value="" placeholder="example@email.com" maxlength="50" required>
+            <input id="submit" class="disabled" type="submit" value="&#129122;">
         </div>
         </form>
       </div>
@@ -258,12 +258,16 @@
 
   <script>
     $(document).ready(function () {
+
+      /* Navigation - Scroll to Element */
       $(".scroll").click(function () {
         $("HTML, BODY").animate({
           scrollTop: $('#'.concat($(this).attr("scroll"))).offset().top - 120
         }, 300);
       });
 
+
+      /* Animation on scroll */
       var $animation_elements = $('.animation-element');
       var $window = $(window);
 
@@ -287,11 +291,30 @@
               $element.addClass($element.attr('animation'));
             }, i)
             i += 150;
-          }
+          } /* else {
+            $element.removeClass($element.attr('animation'));
+          } */
         });
       }
 
-      $("form").submit(function(event) {
+
+      /* Enable/Disable submit */
+      $("#email").bind("propertychange change click keyup input paste", function(event){
+        var submit = $('#submit');
+        if ($(this).val() != '') {
+          submit.addClass('enabled');
+          submit.removeClass('disabled');
+          submit.prop('disabled', false);
+        } else {
+          submit.addClass('disabled');
+          submit.removeClass('enabled');
+          submit.prop('disabled', true);
+        }
+      });
+      
+
+      /* Submit form */
+      $('form').submit(function(event) {
         event.preventDefault();
         $.ajax({
           type: "POST",
@@ -299,11 +322,12 @@
           crossDomain: true,
           dataType: "json",
           data : JSON.stringify({
-            email: $("#email").val()
+            email: $('#email').val()
           })
         }).done(function(response) {
           alert(response);
         });
+        return false;
       });
     });
   </script>

@@ -300,20 +300,27 @@ input:focus, textarea:focus, select:focus {
   outline: none;
 }
 
-#sign-up form input[type=submit] {
+#submit {
   justify-self: end;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   border: none;
   font-size: 1rem;
-  background-color: #E2631A;
   color: white;
   transition: .2s ease;
   cursor: pointer;
 }
 
-input[type=submit]:active {
+.disabled {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.enabled {
+  background-color: #E2631A;
+}
+
+.enabled:active {
   box-shadow: 0 0 0 20px rgb(255, 175, 129);
 }
 
@@ -529,11 +536,11 @@ input[type=submit]:active {
     place-self: center;
   }
 
-  input[type=submit]:hover {
+  .enabled:hover {
     box-shadow: 0 0 0 20px rgb(255, 161, 107);
   }
 
-  input[type=submit]:active {
+  .enabled:active {
     box-shadow: 0 0 0 10px rgb(255, 207, 179);
   }
 
