@@ -21,8 +21,8 @@
 
 <body>
 
-  <div id="web-header-container">
-    <div id="web-header" class="align">
+  <div id="navbar-container">
+    <div id="navbar" class="align">
       <a id="logo" href="index.html" aria-label="Logo">
         <img src="" alt="">
       </a>
@@ -32,7 +32,7 @@
         <a class="scroll" aria-label="Navigation Section 2" scroll="section-2-container">Section 2</a>
         <a class="scroll" aria-label="Navigation Section 3" scroll="section-3-container">Section 3</a>
       </nav>
-      <button id="web-header-btn" class="scroll" scroll="sign-up">Sign Up</button>
+      <button id="navbar-btn" class="scroll" scroll="sign-up">Sign Up</button>
     </div>
   </div>
 
@@ -266,10 +266,25 @@
         }, 300);
       });
 
+      /* Show/Hide navbar on scroll */
+
+      var $window = $(window);
+      var prevScrollpos = $window.scrollTop;
+
+      $window.on('scroll', function() {
+        var currentScrollPos = $window.scrollTop();
+        var navbar = $('#navbar-container');
+        if (prevScrollpos > currentScrollPos) {
+          navbar.css('top', '0px');
+        } else {
+          navbar.css('top', '-' + navbar.height() + 'px');
+        }
+        prevScrollpos = currentScrollPos;
+      });
+
 
       /* Animation on scroll */
       var $animation_elements = $('.animation-element');
-      var $window = $(window);
 
       $window.on('scroll', check_if_in_view);
       $window.trigger('scroll');

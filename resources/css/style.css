@@ -41,14 +41,18 @@ body {
 }
 
 
-/* WEB HEADER */
-#web-header-container {
+/* Navbar */
+#navbar-container {
   background-color: white;
   width: 100%;
   height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: .4s ease;
 }
 
-#web-header {
+#navbar {
   display: grid;
   height: 100%;
 }
@@ -78,7 +82,7 @@ nav a {
   font-weight: 400;
 }
 
-#web-header-btn {
+#navbar-btn {
   grid-column: 3;
   place-self: center end;
   width: 100px;
@@ -92,7 +96,7 @@ nav a {
   transition: .2s ease;
 }
 
-#web-header-btn:active {
+#navbar-btn:active {
   box-shadow: 0 0 0 20px rgb(255, 175, 129);
   background-color: #E2631A;
   color: white;
@@ -454,13 +458,13 @@ input:focus, textarea:focus, select:focus {
     background-color: rgb(202, 84, 16);
   }
 
-  #web-header-btn:hover {
+  #navbar-btn:hover {
     box-shadow: 0 0 0 20px rgb(255, 175, 129);
     background-color: #E2631A;
     color: white;
   }
 
-  #web-header-btn:active {
+  #navbar-btn:active {
     box-shadow: 0 0 0 10px rgb(255, 207, 179);
   }
 
@@ -519,6 +523,10 @@ input:focus, textarea:focus, select:focus {
     grid-template-columns: 1fr 1fr 1fr;
     max-width: none;
     width: 100%;
+  }
+
+  #section-4-container {
+    margin-bottom: -150px;
   }
 
   #section-4 {
