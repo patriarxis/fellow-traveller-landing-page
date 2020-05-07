@@ -223,7 +223,7 @@ nav a {
   font-weight: 600;
 }
 
-.cls-1{fill:#ffc1b0;}
+.cls-1{fill:#ffd0c2;}
 .cls-2{fill:#262322;}
 .cls-3{fill:#afdfff;}
 .cls-4{fill:#E2631A;}
@@ -254,8 +254,8 @@ nav a {
 #section-4-container {
   width: 100%;
   height: auto;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #E2631A;
+  border-bottom: 3px solid #E2631A;
   padding-top: 80px;
   padding-bottom: 80px;
 }
@@ -274,12 +274,6 @@ nav a {
 #android {
   width: 200px;
   margin-top: 40px;
-}
-
-#sign-up-img {
-  width: 100%;
-  max-width: 500px;
-  height: 200px;
 }
 
 #sign-up label {
@@ -415,13 +409,6 @@ input:focus, textarea:focus, select:focus {
   font-weight: 300;
 }
 
-/* Mobile landscape and Tablet portrait */
-@media (min-width: 640px) {
-  #header-btn {
-    width: 200px;
-  }
-}
-
 /* Tablet landscape */
 @media (min-width: 900px) {
   html {
@@ -477,21 +464,14 @@ input:focus, textarea:focus, select:focus {
   
   #header .section-heading {
     grid-area: 1 / 1 / 1 / 1;
-    justify-self: start;
-  }
-
-  #header-btn {
-    justify-self: start;
-  }
-
-  #header-img-mobile {
-    display: none
+    place-self: start;
   }
 
   #header-img {
     display: block;
-    grid-column: 2;
-    max-width: 1100px;
+    grid-row: 1;
+    grid-column: 1 / 3;
+    max-width: none;
   }
 
   #passenger-driver {
@@ -510,7 +490,7 @@ input:focus, textarea:focus, select:focus {
     cursor: pointer;
   }
 
-  #passenger-driver svg:hover {
+  #passenger-driver svg:hover, #passenger-driver svg:focus {
     filter: grayscale(0);
   }
 
@@ -540,21 +520,23 @@ input:focus, textarea:focus, select:focus {
 
   #section-4-container {
     margin-bottom: -150px;
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   #section-4 {
     grid-template-columns: 1fr 1fr;
     column-gap: 50px;
     place-items: start;
+    min-height: 500px;
+    padding: 80px;
+    border: 3px solid #E2631A;
+    border-radius: 20px;
   }
 
   #play-store {
     justify-self: end;
-  }
-
-  #sign-up-img {
-    grid-area: 2 / 1 / 3 / 3;
-    place-self: center;
   }
 
   .enabled:hover {
@@ -714,11 +696,6 @@ input:focus, textarea:focus, select:focus {
 
   .steps {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
-  #section-4-container {
-    padding-top: 100px;
-    padding-bottom: 100px;
   }
 
   #section-4 {
