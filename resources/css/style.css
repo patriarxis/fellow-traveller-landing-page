@@ -50,6 +50,7 @@ body {
   top: 0;
   z-index: 10;
   transition: .4s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #navbar {
@@ -60,8 +61,7 @@ body {
 #logo {
   grid-column: 1;
   place-self: center start;
-  height: 50px;
-  width: 100px;
+  height: 70px;
 }
 
 #logo img {
@@ -223,13 +223,16 @@ nav a {
   font-weight: 600;
 }
 
-.cls-1{fill:#ffb69f;}
+.cls-1{fill:#ffc1b0;}
 .cls-2{fill:#262322;}
 .cls-3{fill:#afdfff;}
+.cls-4{fill:#E2631A;}
+.cls-5{fill:#ffffff;}
+.cls-6{fill:#388ce8;}
 
 .steps div svg {
   width: 100%;
-  max-width: 80px;
+  max-width: 70px;
 }
 
 
@@ -499,6 +502,16 @@ input:focus, textarea:focus, select:focus {
   #passenger, #driver {
     width: 100%;
     max-width: 350px;
+  }
+
+  #passenger-driver svg {
+    filter: grayscale(1);
+    transition: .3s ease;
+    cursor: pointer;
+  }
+
+  #passenger-driver svg:hover {
+    filter: grayscale(0);
   }
 
   .vr {
