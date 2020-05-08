@@ -97,7 +97,6 @@ nav a {
 }
 
 #navbar-btn:active {
-  box-shadow: 0 0 0 20px rgb(255, 175, 129);
   background-color: #E2631A;
   color: white;
 }
@@ -348,28 +347,6 @@ input:focus, textarea:focus, select:focus {
   height: 80px;
 }
 
-#join {
-  display: grid;
-  place-items: center;
-  text-align: center;
-  row-gap: 20px;
-  max-width: 500px;
-}
-
-#join h3 {
-  font-family: 'Playfair Display', serif;
-}
-
-#join p {
-  font-size: 0.8rem;
-  font-weight: 300;
-}
-
-#join .btn {
-  width: 200px;
-  height: 55px;
-}
-
 #social {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -440,22 +417,17 @@ input:focus, textarea:focus, select:focus {
     margin: auto;
   }
 
-  .btn:hover, .btn:focus {
-    background-color: rgb(238, 125, 59);
-  }
-
-  .btn:active {
-    background-color: rgb(202, 84, 16);
-  }
-
   #navbar-btn:hover {
-    box-shadow: 0 0 0 20px rgb(255, 175, 129);
     background-color: #E2631A;
     color: white;
   }
 
   #navbar-btn:active {
-    box-shadow: 0 0 0 10px rgb(255, 207, 179);
+    background-color: rgb(252, 139, 74);
+  }
+
+  #header-container {
+    margin-top: -100px;
   }
 
   #header {
@@ -469,9 +441,13 @@ input:focus, textarea:focus, select:focus {
 
   #header-img {
     display: block;
-    grid-row: 1;
-    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    grid-column: 2;
     max-width: none;
+  }
+
+  #skata {
+    margin-top: 100px;
   }
 
   #passenger-driver {
@@ -695,7 +671,7 @@ input:focus, textarea:focus, select:focus {
   }
 
   .steps {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   #section-4 {
