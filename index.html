@@ -23,10 +23,20 @@
 
   <div id="navbar-container">
     <div id="navbar" class="align">
+      <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <rect class="cls-2" x="4" y="3.95" width="16" height="1"/>
+        <rect class="cls-2" x="4" y="11.5" width="16" height="1"/>
+        <rect class="cls-2" x="4" y="19.05" width="16" height="1"/>
+      </svg>
+      <svg id="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <rect class="cls-2" x="4" y="3.95" width="16" height="1"/>
+        <rect class="cls-2" x="4" y="11.5" width="16" height="1"/>
+        <rect class="cls-2" x="4" y="19.05" width="16" height="1"/>
+      </svg>
       <a id="logo" href="index.html" aria-label="Logo">
         <img src="resources/images/logo.svg" alt="">
       </a>
-      <nav>
+      <nav class="hide-nav">
         <a class="scroll" aria-label="Navigation Header" scroll="header-container" tabindex="0">Header</a>
         <a class="scroll" aria-label="Navigation Section 1" scroll="section-1-container" tabindex="0">Section 1</a>
         <a class="scroll" aria-label="Navigation Section 2" scroll="section-2-container" tabindex="0">Section 2</a>
@@ -236,14 +246,13 @@
     $(document).ready(function () {
 
       /* Scroll to Element */
-      $(".scroll").click(function () {
+      $(".scroll").click(function() {
         $("HTML, BODY").animate({
           scrollTop: $('#'.concat($(this).attr("scroll"))).offset().top - 120
         }, 300);
       });
 
       /* Show/Hide navbar on scroll */
-
       var $window = $(window);
       var prevScrollpos = $window.scrollTop;
 
@@ -259,7 +268,38 @@
       });
 
 
-      /* Animation on scroll */
+      $('#hamburger').click(function() {
+        setTimeout(function() {
+          $('nav').css('opacity', '1');
+        }, 100);
+        $('nav').addClass('show-nav');
+        $('#close').show(200);
+      });
+
+      $('nav a').click(function() {
+        $('nav').css('opacity', '0');
+        $('#close').hide();
+        setTimeout(function() {
+          $('nav').removeClass('show-nav');
+        }, 100);
+      });
+
+      $('#close').click(function() {
+        $('nav').css('opacity', '0');
+        $('#close').hide();
+        setTimeout(function() {
+          $('nav').removeClass('show-nav');
+        }, 100);
+      });
+
+      $(window).resize(function() {
+        if($(window).width() > 880) {
+          $('nav').removeClass('show-nav');
+          $('#close').hide();
+        }
+      });
+
+      /* Animate on scroll */
       var $animation_elements = $('.animation-element');
 
       $window.on('scroll', check_if_in_view);

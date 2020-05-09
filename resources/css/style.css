@@ -55,12 +55,45 @@ body {
 
 #navbar {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   height: 100%;
 }
 
-#logo {
+#hamburger {
   grid-column: 1;
-  place-self: center start;
+  align-self: center;
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: .2s ease;
+}
+
+#hamburger:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#close {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+#close:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#logo {
+  grid-column: 2;
+  place-self: center;
   height: 70px;
 }
 
@@ -70,9 +103,8 @@ body {
 }
 
 nav {
-  display: none;
-  grid-column: 2;
-  place-self: center;
+  opacity: 0;
+  transition: .1s ease;
 }
 
 nav a {
@@ -80,6 +112,32 @@ nav a {
   margin: 0 5px;
   font-size: .9rem;
   font-weight: 400;
+}
+
+.hide-nav {
+  display: none;
+}
+
+.show-nav {
+  display: grid;
+  place-items: center;
+  padding: 200px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.show-nav a {
+  padding: 30px 80px;
+  transition: .2s ease;
+}
+
+.show-nav a:active {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 #navbar-btn {
@@ -395,9 +453,33 @@ input:focus, textarea:focus, select:focus {
     row-gap: 250px;
   }
 
-  nav {
+  #navbar {
+    grid-template-columns: auto auto auto;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  #close {
+    display: none;
+  }
+
+  #logo {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .hide-nav {
     display: block;
   }
+
+  nav {
+    display: block;
+    opacity: 1;
+    place-self: center;
+  }
+
   nav a {
     transition: .2s ease;
   }
