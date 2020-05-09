@@ -141,6 +141,8 @@ nav a {
 }
 
 .section-heading {
+  position: relative;
+  z-index: 5;
   display: grid;
   max-width: 500px;
 }
@@ -612,41 +614,12 @@ input:focus, textarea:focus, select:focus {
     margin-bottom: -150px;
   }
 
-  #footer {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
-    row-gap: 80px;
-    justify-items: start;
-    max-width: 750px;
-  }
-
-  #footer-logo {
-    grid-area: 1 / 1 / 1 / 3;
-    place-self: center;
-  }
-
-  #join {
-    grid-area: 2 / 2 / 4 / 3;
-    justify-items: start;
-    text-align: left;
-  }
-
-  #social {
-    grid-area: 2 / 1 / 4 / 2;
-    place-self: center;
-  }
-
   #social svg:hover rect {
     fill: #4b4b4b;
   }
 
   #social svg:active rect {
     fill: #000;
-  }
-
-  #copyright {
-    grid-area: 4 / 1 / 4 / 3;
-    place-self: center;
   }
 
   .animation-element {

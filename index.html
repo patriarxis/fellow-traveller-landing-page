@@ -217,6 +217,7 @@
   <footer id="footer-container">
     <div id="footer" class="align">
       <img id="footer-logo" src="" alt="">
+      <h3>Ακολουθήστε μας μπρο</h3>
       <div id="social">
         <a href="" aria-label="Facebook" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -317,12 +318,12 @@
         event.preventDefault();
         $.ajax({
           type: "POST",
-          url : "https://api.fellowtraveller.gr/campaigns/subscribe",
+          url : "http://snf-874026.vm.okeanos.grnet.gr:5025/newsletter",
           crossDomain: true,
           dataType: "json",
-          data : JSON.stringify({
+          data : {
             email: $('#email').val()
-          }),
+          },
           statusCode: {
             200: function() {
                 $('#submit').fadeOut(300);
