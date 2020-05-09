@@ -27,7 +27,7 @@ strong {
 
 html {
   font-family: 'Fira Sans', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   color: #262322;
 }
 
@@ -269,9 +269,6 @@ nav a {
 
 .steps div {
   max-width: 350px;
-  padding: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
 }
 
 .steps div > * {
@@ -337,11 +334,17 @@ nav a {
 }
 
 #sign-up form div {
+  position: relative;
   display: grid;
   width: 100%;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: auto auto;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 10px 0;
+  transition: .2s ease;
+}
+
+#sign-up form div:focus-within {
+  border-color: #262322;
 }
 
 #email {
@@ -379,6 +382,47 @@ input:focus, textarea:focus, select:focus {
 
 .enabled:active {
   box-shadow: 0 0 0 20px rgb(255, 175, 129);
+}
+
+#message {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 70px;
+  transform: translate(0, -50%);
+  color: rgb(26, 146, 226);
+}
+
+.complete {
+  justify-self: end;
+  width: 50px;
+  border: none;
+  font-size: 1rem;
+  color: white;
+}
+
+.complete > * {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: 2s ease-out;
+}
+
+.anim {
+  stroke-dashoffset: 0;
+}
+
+#success {
+  display: none;
+}
+
+#success circle {
+  stroke: rgb(26, 146, 226);
+  fill: none;
+}
+
+#success polyline {
+  stroke: rgb(26, 146, 226);
+  fill: none;
 }
 
 
@@ -446,7 +490,7 @@ input:focus, textarea:focus, select:focus {
 /* Tablet landscape */
 @media (min-width: 900px) {
   html {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   body {

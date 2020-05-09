@@ -209,8 +209,13 @@
         <form>
           <label for="email">Email</label>
           <div>
-            <input id="email" type="email" name="email" value="" placeholder="example@email.com" maxlength="50" required>
+            <input id="email" type="email" name="email" value="" placeholder="example@email.com" maxlength="50">
             <input id="submit" class="disabled" type="submit" value="&#129122;">
+            <h4 id="message">Message</h4>
+            <svg id="success" class="complete" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="11" stroke-width="1"/>
+              <polyline points="5.86 11.96 9.95 16.05 18.05 7.95"/>
+            </svg>
         </div>
         </form>
       </div>
@@ -345,6 +350,11 @@
       
 
       /* Submit form */
+      $('#email').val('');
+      $('#submit').show();
+      $('#success').hide();
+      $('#success > *').removeClass('anim');
+      $('#message').hide();
       $('form').submit(function(event) {
         event.preventDefault();
         $.ajax({
@@ -354,10 +364,36 @@
           dataType: "json",
           data : JSON.stringify({
             email: $('#email').val()
-          })
-        }).done(function(response) {
-          alert(response);
+          }),
+          statusCode: {
+            200: success(),
+            409: exists(),
+            500: error()
+          }
         });
+        
+        function success() {
+          $('#submit').fadeOut(300);
+          setTimeout(function() {
+            $('#success').fadeIn();
+            $('#success > *').addClass('anim');
+            $('#message').text('Success');
+            $('#message').fadeIn();
+          }, 310);
+        }
+
+        setTimeout(function() {
+          $('#success').fadeOut(300);
+          $('#message').fadeOut(300);
+        }, 2000);
+
+        setTimeout(function() {
+          $('#submit').fadeIn();
+          $('#success > *').removeClass('anim');
+          $('#message').text('Message');
+        }, 2310);
+        
+        $('#email').val('');
         return false;
       });
     });
