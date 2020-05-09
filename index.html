@@ -366,21 +366,19 @@
             email: $('#email').val()
           }),
           statusCode: {
-            200: success(),
+            200: function() {
+                $('#submit').fadeOut(300);
+                setTimeout(function() {
+                  $('#success').fadeIn();
+                  $('#success > *').addClass('anim');
+                  $('#message').text('Success');
+                  $('#message').fadeIn();
+                }, 310);
+              }/* ,
             409: exists(),
-            500: error()
+            500: error() */
           }
         });
-        
-        function success() {
-          $('#submit').fadeOut(300);
-          setTimeout(function() {
-            $('#success').fadeIn();
-            $('#success > *').addClass('anim');
-            $('#message').text('Success');
-            $('#message').fadeIn();
-          }, 310);
-        }
 
         setTimeout(function() {
           $('#success').fadeOut(300);
