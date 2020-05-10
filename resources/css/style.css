@@ -455,6 +455,7 @@ input:focus, textarea:focus, select:focus {
 #copyright {
   font-size: 0.8rem;
   font-weight: 300;
+  
 }
 
 /* Tablet landscape */
@@ -622,7 +623,7 @@ input:focus, textarea:focus, select:focus {
     fill: #000;
   }
 
-  .animation-element {
+  .animation-element, .animation-steps-driver, .animation-steps-passenger {
     opacity: 0;
     animation-fill-mode: forwards;
   }
@@ -650,7 +651,7 @@ input:focus, textarea:focus, select:focus {
   .fadeIn {
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
   }
 
   @-webkit-keyframes fadeInLeft {
