@@ -62,7 +62,7 @@ body {
 #logo {
   grid-column: 1;
   place-self: center;
-  height: 70px;
+  height: 60px;
 }
 
 #logo img {
