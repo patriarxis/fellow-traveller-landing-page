@@ -13,16 +13,27 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "MobileApplication",
-      "name": "Fellow Traveller",
-      "operatingSystem": "ANDROID 6.0",
-      "softwareVersion": "ALPHA",
-      "countriesSupported": "GR",
-      "author": "Fellow Traveller",
-      "copyrightHolder": "Fellow Traveller",
-      "copyrightYear": "2020",
-      "keywords": "Fellow Traveller, carpool, carpool app, carpool Ελλάδα, Share The Ride, hitchhicking, ωτοστόπ, autostop, συνεπιβατησμός",
-      "publisher": "Fellow Traveller"
+      "@graph":
+      [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Fellow Traveller",
+          "applicationCategory": "https://schema.org/MobileApplication",
+          "operatingSystem": "ANDROID",
+          "countriesSupported": "GR",
+          "copyrightHolder": {
+            "@type": "Organization",
+            "name": "Fellow Traveller"
+          },
+          "copyrightYear": "2020"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "url": "http://www.fellowtraveller.gr",
+          "logo": "http://www.fellowtraveller.gr/resources/images/logo.png"
+        }
+      ]
     }
   </script>
 
