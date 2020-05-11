@@ -385,13 +385,26 @@ input:focus, textarea:focus, select:focus {
   display: none;
 }
 
-#success circle {
+#success > * {
   stroke: rgb(26, 146, 226);
   fill: none;
 }
 
-#success polyline {
-  stroke: rgb(26, 146, 226);
+#exists {
+  display: none;
+}
+
+#exists > * {
+  stroke: red;
+  fill: none;
+}
+
+#error {
+  display: none;
+}
+
+#error > * {
+  stroke: red;
   fill: none;
 }
 

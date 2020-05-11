@@ -29,8 +29,8 @@
       <nav class="hide-nav">
         <a class="scroll" aria-label="Navigation Header" scroll="header-container" tabindex="0">Header</a>
         <a class="scroll" aria-label="Navigation Section 1" scroll="section-1-container" tabindex="0">Section 1</a>
-        <a class="scroll" aria-label="Navigation Section 2" scroll="section-3-container" tabindex="0">Section 2</a>
-        <a class="scroll" aria-label="Navigation Section 3" scroll="section-2-container" tabindex="0">Section 3</a>
+        <a class="scroll" aria-label="Navigation Section 2" scroll="section-2-container" tabindex="0">Section 2</a>
+        <a class="scroll" aria-label="Navigation Section 3" scroll="section-3-container" tabindex="0">Section 3</a>
       </nav>
       <button id="navbar-btn" class="scroll" scroll="sign-up">Εγγραφή</button>
     </div>
@@ -219,7 +219,17 @@
               <circle cx="12" cy="12" r="11" stroke-width="1"/>
               <polyline points="5.86 11.96 9.95 16.05 18.05 7.95"/>
             </svg>
-        </div>
+            <svg id="exists" class="complete" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="11"/>
+              <path d="M14.58,7.94a4.81,4.81,0,1,1-4.87-.17"/>
+              <polyline points="14.46 10.34 14.46 7.9 16.81 7.24"/>
+            </svg>
+            <svg id="error" class="complete" viewBox="0 0 24 24">
+              <circle class="cls-3" cx="12" cy="12" r="11"/>
+              <line class="cls-3" x1="12" y1="15.21" x2="12" y2="6.01"/>
+              <line class="cls-3" x1="12" y1="16.97" x2="12" y2="17.99"/>
+            </svg>
+          </div>
         </form>
       </div>
     </div>
@@ -365,29 +375,52 @@
           },
           statusCode: {
             200: function() {
-                $('#submit').fadeOut(300);
-                setTimeout(function() {
-                  $('#success').fadeIn();
-                  $('#success > *').addClass('anim');
-                  $('#message').text('Success');
-                  $('#message').fadeIn();
-                }, 310);
-              }/* ,
-            409: exists(),
-            500: error() */
+              $('#submit').fadeOut(300);
+              setTimeout(function() {
+                $('#success').fadeIn();
+                $('#success > *').addClass('anim');
+                $('#message').text('Success');
+                $('#message').css('color', 'blue');
+                $('#message').fadeIn();
+              }, 310);
+            },
+            409: function() {
+              $('#submit').fadeOut(300);
+              setTimeout(function() {
+                $('#exists').fadeIn();
+                $('#exists > *').addClass('anim');
+                $('#message').text('Email already exists');
+                $('#message').css('color', 'orange');
+                $('#message').fadeIn();
+              }, 310);
+            },
+            500: function() {
+              $('#submit').fadeOut(300);
+              setTimeout(function() {
+                $('#error').fadeIn();
+                $('#error > *').addClass('anim');
+                $('#message').text('Error... something went wrong');
+                $('#message').css('color', 'red');
+                $('#message').fadeIn();
+              }, 310);
+            }
           }
         });
 
         setTimeout(function() {
           $('#success').fadeOut(300);
+          $('#exists').fadeOut(300);
+          $('#error').fadeOut(300);
           $('#message').fadeOut(300);
         }, 2000);
 
         setTimeout(function() {
           $('#submit').fadeIn();
           $('#success > *').removeClass('anim');
+          $('#exists > *').removeClass('anim');
+          $('#error > *').removeClass('anim');
           $('#message').text('Message');
-        }, 2310);
+        }, 3000);
         
         $('#email').val('');
         return false;
