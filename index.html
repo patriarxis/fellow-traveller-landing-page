@@ -415,9 +415,9 @@
           url : "https://api.fellowtraveller.gr/campaigns/subscribe",
           crossDomain: true,
           dataType: "json",
-          data : {
+          data : JSON.stringify({
             email: $('#email').val()
-          },
+          }),
           statusCode: {
             200: function() {
               $('#submit').fadeOut(300);
