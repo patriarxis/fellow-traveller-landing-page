@@ -138,6 +138,7 @@ nav a {
   font-weight: 300;
   line-height: 25px;
   word-spacing: 1px;
+  text-align: justify;
 }
 
 #header-img {
@@ -168,7 +169,11 @@ nav a {
   height: initial;
 }
 
-#section-1 .section-heading {
+#section-1 .section-heading > * {
+  text-align: center;
+}
+
+#section-1 .para {
   text-align: center;
 }
 
