@@ -45,7 +45,7 @@ body {
 #navbar-container {
   background-color: white;
   width: 100%;
-  height: 70px;
+  height: 60px;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -55,14 +55,14 @@ body {
 
 #navbar {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   height: 100%;
 }
 
 #logo {
   grid-column: 1;
-  place-self: center;
-  height: 60px;
+  place-self: center start;
+  width: 100px;
 }
 
 #logo img {
@@ -71,8 +71,7 @@ body {
 }
 
 nav {
-  opacity: 0;
-  transition: .1s ease;
+  display: none;
 }
 
 nav a {
