@@ -379,7 +379,7 @@ input:focus, textarea:focus, select:focus {
   -webkit-transform: translate(0, -50%);
       -ms-transform: translate(0, -50%);
           transform: translate(0, -50%);
-  color: rgb(26, 146, 226);
+  color: white;
 }
 
 .complete {
@@ -417,7 +417,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 #exists > * {
-  stroke: red;
+  stroke: rgb(221, 82, 18);
   fill: none;
 }
 
@@ -426,7 +426,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 #error > * {
-  stroke: red;
+  stroke: rgb(221, 18, 18);
   fill: none;
 }
 
